@@ -10,6 +10,14 @@
 
 @interface ViewController : NSViewController
 
+@property (nonatomic, nullable, weak) IBOutlet NSButton *fileOpenButton;
+@property (nonatomic, nullable, weak) IBOutlet NSButton *appendCoordinateDataButton;
+@property (nonatomic, nullable, weak) IBOutlet NSImageView *imageView;
+@property (nonatomic, nullable, weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, nullable, strong) NSArray *sourceImageURLs;
+@property (nonatomic, nullable, strong) NSMutableArray *completedImageURLs;
+@property (nonatomic, nullable, strong) NSMutableArray *completedFrames;
+@property (nonatomic, assign) NSInteger currentSelectedIndex;
 
 @end
 

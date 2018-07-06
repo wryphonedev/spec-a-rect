@@ -12,6 +12,8 @@
 		1159EA8120EEDAF900E5D764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1159EA8020EEDAF900E5D764 /* Assets.xcassets */; };
 		1159EA8420EEDAF900E5D764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1159EA8220EEDAF900E5D764 /* Main.storyboard */; };
 		1159EA8720EEDAF900E5D764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1159EA8620EEDAF900E5D764 /* main.m */; };
+		6AB209BF20EFE572004B0554 /* SelectionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB209BE20EFE572004B0554 /* SelectionImageView.m */; };
+		6AB209C120EFE5DA004B0554 /* SelectionImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB209C020EFE5DA004B0554 /* SelectionImageView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		1159EA8520EEDAF900E5D764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1159EA8620EEDAF900E5D764 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1159EA8820EEDAF900E5D764 /* SpecARect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpecARect.entitlements; sourceTree = "<group>"; };
+		6AB209BD20EFE572004B0554 /* SelectionImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionImageView.h; sourceTree = "<group>"; };
+		6AB209BE20EFE572004B0554 /* SelectionImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionImageView.m; sourceTree = "<group>"; };
+		6AB209C020EFE5DA004B0554 /* SelectionImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionImageView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,9 @@
 				1159EA7B20EEDAF800E5D764 /* AppDelegate.m */,
 				1159EA7D20EEDAF800E5D764 /* ViewController.h */,
 				1159EA7E20EEDAF800E5D764 /* ViewController.m */,
+				6AB209BD20EFE572004B0554 /* SelectionImageView.h */,
+				6AB209BE20EFE572004B0554 /* SelectionImageView.m */,
+				6AB209C020EFE5DA004B0554 /* SelectionImageView.xib */,
 				1159EA8020EEDAF900E5D764 /* Assets.xcassets */,
 				1159EA8220EEDAF900E5D764 /* Main.storyboard */,
 				1159EA8520EEDAF900E5D764 /* Info.plist */,
@@ -129,6 +137,7 @@
 			files = (
 				1159EA8120EEDAF900E5D764 /* Assets.xcassets in Resources */,
 				1159EA8420EEDAF900E5D764 /* Main.storyboard in Resources */,
+				6AB209C120EFE5DA004B0554 /* SelectionImageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +151,7 @@
 				1159EA7F20EEDAF800E5D764 /* ViewController.m in Sources */,
 				1159EA8720EEDAF900E5D764 /* main.m in Sources */,
 				1159EA7C20EEDAF800E5D764 /* AppDelegate.m in Sources */,
+				6AB209BF20EFE572004B0554 /* SelectionImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
