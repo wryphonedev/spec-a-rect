@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TrainedImage.h"
 
 @implementation ViewController
 
@@ -17,8 +18,8 @@
     // Do any additional setup after loading the view.
 }
 
-
 - (void)setRepresentedObject:(id)representedObject {
+    
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
@@ -40,18 +41,52 @@
 - (void)beginImageMarkup {
     
     [self renderNextImage];
+    
+    
+    
 }
     
 - (void)renderNextImage {
     
-    NSInteger nextIndex = 0;
+    NSInteger nextIndex = self.currentSelectedIndex;
     if (nextIndex <= [[self sourceImageURLs] count]) {
-        
         NSURL *imageURL = [[self sourceImageURLs] objectAtIndex:nextIndex];
         NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageURL];
         NSImage *image = [[NSImage alloc] initWithData:imageData];
         [[self imageView] setImage:image];
     }
+}
+
+- (void)updateDescriptionTextWithFrame:(CGRect)frame {
+    
+    NSString *description = NSStringFromRect(frame);
+    
+    
+}
+
+- (void)saveFrameSelection:(CGRect)rect {
+    
+    NSURL *file = [[self sourceImageURLs] objectAtIndex:(self.currentSelectedIndex - 1)];
+    NSString *fileName = [file lastPathComponent];
+    NSValue *frameValue = [NSValue valueWithRect:rect];
+    
+    NSDictionary *frameDict = @{@"imageFrame" : frameValue, @"imageFileName" : fileName};
+    NSError *error;
+    TrainedImage *image = [[TrainedImage alloc] initWithDictionary:frameDict error:&error];
+    [[self ]]
+    
+}
+
+#pragma mark - Selection Delegate
+
+- (void)didMakeSelection:(CGRect)selectionFrame {
+    
+    
+    
+}
+
+- (void)didClearSelection {
+    
     
 }
 

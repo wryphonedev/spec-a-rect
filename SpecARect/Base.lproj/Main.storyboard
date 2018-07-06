@@ -707,14 +707,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="SelectionImageView">
-                        <rect key="frame" x="0.0" y="0.0" width="657" height="503"/>
+                        <rect key="frame" x="0.0" y="0.0" width="998" height="772"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-Q1-kiD">
-                                <rect key="frame" x="0.0" y="18" width="657" height="477"/>
+                                <rect key="frame" x="0.0" y="18" width="998" height="746"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lLL-J8-cNp">
-                                        <rect key="frame" x="288" y="449" width="186" height="32"/>
+                                        <rect key="frame" x="288" y="718" width="422" height="32"/>
                                         <buttonCell key="cell" type="push" title="Choose Training Images" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t68-b9-MYt">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -724,19 +724,27 @@
                                         </connections>
                                     </button>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V2k-re-xdU">
-                                        <rect key="frame" x="129" y="148" width="400" height="300"/>
+                                        <rect key="frame" x="99" y="117" width="800" height="600"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Myf-g3-XzV"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="ODB-d4-K1d"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="Myf-g3-XzV"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="600" id="ODB-d4-K1d"/>
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Xw5-DV-DlP"/>
                                     </imageView>
                                     <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="SWc-Ke-OPg">
-                                        <rect key="frame" x="12" y="25" width="633" height="116"/>
+                                        <rect key="frame" x="12" y="50" width="974" height="60"/>
                                     </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-4K-q00">
+                                        <rect key="frame" x="393" y="26" width="213" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Select An Batch of Images to Train" id="5En-Ca-F4t">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7gc-2L-loI">
-                                        <rect key="frame" x="308" y="-1" width="41" height="19"/>
-                                        <buttonCell key="cell" type="roundRect" title="Next" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Isb-vI-Edi">
+                                        <rect key="frame" x="479" y="-1" width="41" height="19"/>
+                                        <buttonCell key="cell" type="roundRect" title="Next" bezelStyle="roundedRect" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Isb-vI-Edi">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="cellTitle"/>
                                         </buttonCell>
@@ -751,8 +759,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -771,12 +781,14 @@
                     <connections>
                         <outlet property="fileOpenButton" destination="lLL-J8-cNp" id="MFA-fu-63C"/>
                         <outlet property="imageView" destination="V2k-re-xdU" id="nFB-Dz-GKb"/>
+                        <outlet property="nextButton" destination="7gc-2L-loI" id="9Je-qR-S9x"/>
                         <outlet property="progressIndicator" destination="SWc-Ke-OPg" id="bo5-t2-jjC"/>
+                        <outlet property="statusLabel" destination="c5c-4K-q00" id="h45-0u-eQy"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163.5" y="771.5"/>
+            <point key="canvasLocation" x="334" y="906"/>
         </scene>
     </scenes>
 </document>

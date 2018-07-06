@@ -64,7 +64,7 @@
     CGRect selection = CGRectMake(self.startPoint.x, self.startPoint.y, width, height);
     self.selectionFrame = selection;
     self.hasSelection = YES;
-    
+    [[self selectionDelegate] didMakeSelection:selection];
 }
     
 - (void)mouseUp:(NSEvent *)theEvent
@@ -74,6 +74,7 @@
 
 - (void)resetSelection {
     
+    [[self selectionDelegate] didClearSelection];
     [self.shapeLayer removeFromSuperlayer];
     self.shapeLayer = nil;
     self.selectionFrame = CGRectZero;

@@ -7,17 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SelectionImageView.h"
 
-@interface ViewController : NSViewController
+@class TrainedImage;
+
+@interface ViewController : NSViewController <SelectionImageViewProtocol>
 
 @property (nonatomic, nullable, weak) IBOutlet NSButton *fileOpenButton;
-@property (nonatomic, nullable, weak) IBOutlet NSButton *appendCoordinateDataButton;
+@property (nonatomic, nullable, weak) IBOutlet NSButton *nextButton;
 @property (nonatomic, nullable, weak) IBOutlet NSImageView *imageView;
 @property (nonatomic, nullable, weak) IBOutlet NSProgressIndicator *progressIndicator;
 @property (nonatomic, nullable, strong) NSArray *sourceImageURLs;
-@property (nonatomic, nullable, strong) NSMutableArray *completedImageURLs;
-@property (nonatomic, nullable, strong) NSMutableArray *completedFrames;
+@property (nonatomic, nullable, strong) NSArray<TrainedImage *> *trained;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
+@property (weak) IBOutlet NSTextField *statusLabel;
 
 @end
 
