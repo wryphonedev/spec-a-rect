@@ -13,7 +13,8 @@
     
 @property (nonatomic, assign) NSPoint startPoint;
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
-@property (nonatomic, assign) BOOL hasImageForSelection;
+@property (nonatomic, assign) BOOL hasSelection;
+@property (nonatomic, assign) CGRect selectionFrame;
 
 @end
 

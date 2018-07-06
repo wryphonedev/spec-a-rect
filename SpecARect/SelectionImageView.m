@@ -13,8 +13,9 @@
     
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    if (!_hasImageForSelection) {
-        return;
+    if (self.hasSelection) {
+        
+        [self resetSelection];
     }
     
         self.startPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
@@ -41,34 +42,42 @@
     
 - (void)mouseDragged:(NSEvent *)theEvent
 {
-    if (!_hasImageForSelection) {
-        return;
-    }
-    
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
         // create path for the shape layer
-        
+    
+        NSPoint startPoint = self.startPoint;
+    
         CGMutablePathRef path = CGPathCreateMutable();
-        CGPathMoveToPoint(path, NULL, self.startPoint.x, self.startPoint.y);
-        CGPathAddLineToPoint(path, NULL, self.startPoint.x, point.y);
+        CGPathMoveToPoint(path, NULL, startPoint.x, startPoint.y);
+        CGPathAddLineToPoint(path, NULL, startPoint.x, point.y);
         CGPathAddLineToPoint(path, NULL, point.x, point.y);
-        CGPathAddLineToPoint(path, NULL, point.x, self.startPoint.y);
+        CGPathAddLineToPoint(path, NULL, point.x, startPoint.y);
         CGPathCloseSubpath(path);
         
         // set the shape layer's path
-        
         self.shapeLayer.path = path;
-        
         CGPathRelease(path);
+    
+    CGFloat height = (point.y  - startPoint.y);
+    CGFloat width = (point.x - startPoint.x);
+    
+    CGRect selection = CGRectMake(self.startPoint.x, self.startPoint.y, width, height);
+    self.selectionFrame = selection;
+    self.hasSelection = YES;
+    
 }
     
 - (void)mouseUp:(NSEvent *)theEvent
 {
-    if (!_hasImageForSelection) {
-        return;
-    }
-        [self.shapeLayer removeFromSuperlayer];
-        self.shapeLayer = nil;
+    
+}
+
+- (void)resetSelection {
+    
+    [self.shapeLayer removeFromSuperlayer];
+    self.shapeLayer = nil;
+    self.selectionFrame = CGRectZero;
+    self.hasSelection = NO;
 }
 
 @end
