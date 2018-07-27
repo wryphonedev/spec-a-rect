@@ -32,18 +32,21 @@
     [panel setCanChooseDirectories:YES];
     [panel beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse result) {
        [self setSourceImageURLs:[panel URLs]];
-        if ([[self sourceImageURLs] count]) {
-            [self beginImageMarkup];
+        if ([[self sourceImageURLs] count] > 0) {
+            [self renderNextImage];
         }
     }];
 }
-
-- (void)beginImageMarkup {
     
-    [self renderNextImage];
+- (IBAction)didPressNextButton:(id)sender {
     
-    
-    
+    if(self.currentSelectedIndex < self.sourceImageURLs.count) {
+        self.currentSelectedIndex = (self.currentSelectedIndex + 1);
+        [self renderNextImage];
+    }
+    else {
+        self.nextButton.title = @"Finish";
+    }
 }
     
 - (void)renderNextImage {
@@ -60,8 +63,7 @@
 - (void)updateDescriptionTextWithFrame:(CGRect)frame {
     
     NSString *description = NSStringFromRect(frame);
-    
-    
+    self.statusLabel.stringValue = description;
 }
 
 - (void)saveFrameSelection:(CGRect)rect {
@@ -73,16 +75,18 @@
     NSDictionary *frameDict = @{@"imageFrame" : frameValue, @"imageFileName" : fileName};
     NSError *error;
     TrainedImage *image = [[TrainedImage alloc] initWithDictionary:frameDict error:&error];
-    [[self ]]
-    
+    if(!error) {
+        [[self trained] addObject:image];
+    }
 }
 
 #pragma mark - Selection Delegate
 
 - (void)didMakeSelection:(CGRect)selectionFrame {
     
-    
-    
+    [self updateDescriptionTextWithFrame:selectionFrame];
+    [self saveFrameSelection:selectionFrame];
+    self.nextButton.enabled = YES;
 }
 
 - (void)didClearSelection {

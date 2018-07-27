@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -702,10 +702,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Selection Scene-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" userLabel="Selection Scene" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="SelectionImageView">
                         <rect key="frame" x="0.0" y="0.0" width="998" height="772"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -777,11 +777,13 @@
                             <constraint firstItem="lLL-J8-cNp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="294" id="blD-jX-WdB"/>
                             <constraint firstItem="4zw-Q1-kiD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="oXr-gX-mpw"/>
                         </constraints>
+                        <connections>
+                            <outlet property="selectionDelegate" destination="XfG-lQ-9wD" id="ItI-h8-L2H"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="fileOpenButton" destination="lLL-J8-cNp" id="MFA-fu-63C"/>
                         <outlet property="imageView" destination="V2k-re-xdU" id="nFB-Dz-GKb"/>
-                        <outlet property="nextButton" destination="7gc-2L-loI" id="9Je-qR-S9x"/>
                         <outlet property="progressIndicator" destination="SWc-Ke-OPg" id="bo5-t2-jjC"/>
                         <outlet property="statusLabel" destination="c5c-4K-q00" id="h45-0u-eQy"/>
                     </connections>

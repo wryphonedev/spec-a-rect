@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :macos, '10.13.5'
+platform :osx, '10.13.5'
 
 target 'SpecARect' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks

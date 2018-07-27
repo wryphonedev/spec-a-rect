@@ -18,7 +18,7 @@
 @property (nonatomic, nullable, weak) IBOutlet NSImageView *imageView;
 @property (nonatomic, nullable, weak) IBOutlet NSProgressIndicator *progressIndicator;
 @property (nonatomic, nullable, strong) NSArray *sourceImageURLs;
-@property (nonatomic, nullable, strong) NSArray<TrainedImage *> *trained;
+@property (nonatomic, nullable, strong) NSMutableArray<TrainedImage *> *trained;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
 @property (weak) IBOutlet NSTextField *statusLabel;
 
